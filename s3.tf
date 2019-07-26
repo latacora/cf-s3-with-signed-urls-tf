@@ -53,6 +53,6 @@ EOF
 }
 
 resource "aws_iam_role_policy_attachment" "s3_signer_policy_attachment" {
-  role       = "${aws_iam_role.s3_signer.name}"
+  role = "${aws_iam_role.s3_signer.name}"
   policy_arn = "${aws_iam_policy.s3_signer.arn}"
 }
