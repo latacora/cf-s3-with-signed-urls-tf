@@ -6,6 +6,16 @@ resource "aws_cloudfront_distribution" "s3_front" {
     origin_id   = "s3_bucket"
   }
 
+  viewer_certificate {
+    cloudfront_default_certificate = true
+  }
+
+  restrictions {
+    geo_restriction {
+      restriction_type = "none"
+    }
+  }
+
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD"]
     cached_methods   = ["GET", "HEAD"]
