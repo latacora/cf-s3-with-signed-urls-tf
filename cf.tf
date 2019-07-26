@@ -23,7 +23,6 @@ resource "aws_cloudfront_distribution" "s3_front" {
 
     forwarded_values {
       query_string = true
-      headers      = "*"
 
       cookies {
         forward = "all"
