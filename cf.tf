@@ -1,4 +1,6 @@
 resource "aws_cloudfront_distribution" "s3_front" {
+  enabled = true
+
   origin {
     domain_name = "${aws_s3_bucket.backend.bucket_regional_domain_name}"
     origin_id   = "s3_bucket"
